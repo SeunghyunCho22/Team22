@@ -22,15 +22,15 @@ public class Withdrawl extends JFrame implements ActionListener {
         l3.setBounds(0,0,1550,830);
         add(l3);
 
-        JLabel label1 = new JLabel("MAXIMUM WITHDRAWAL IS RS.10,000");
+        JLabel label1 = new JLabel("인출 가능한 최대 액수는 10,000원 입니다."); //한글 패치
         label1.setForeground(Color.WHITE);
-        label1.setFont(new Font("System", Font.BOLD, 16));
+        label1.setFont(new Font("시스템", Font.BOLD, 16));
         label1.setBounds(460,180,700,35);
         l3.add(label1);
 
-        JLabel label2 = new JLabel("PLEASE ENTER YOUR AMOUNT");
+        JLabel label2 = new JLabel("계좌번호를 입력하세요"); // 한글 패치
         label2.setForeground(Color.WHITE);
-        label2.setFont(new Font("System", Font.BOLD, 16));
+        label2.setFont(new Font("시스템", Font.BOLD, 16));
         label2.setBounds(460,220,400,35);
         l3.add(label2);
 
@@ -39,17 +39,17 @@ public class Withdrawl extends JFrame implements ActionListener {
         textField.setBackground(new Color(65,125,128));
         textField.setForeground(Color.WHITE);
         textField.setBounds(460,260,320,25);
-        textField.setFont(new Font("Raleway", Font.BOLD,22));
+        textField.setFont(new Font("Raleway", Font.BOLD,15));// 폰트가 커서 잘리는 이슈, 폰트 크기를 줄여 문제 해결
         l3.add(textField);
 
-        b1 = new JButton("WITHDRAW");
+        b1 = new JButton("현금 인출"); // 한글 패치
         b1.setBounds(700,362,150,35);
         b1.setBackground(new Color(65,125,128));
         b1.setForeground(Color.WHITE);
         b1.addActionListener(this);
         l3.add(b1);
 
-        b2 = new JButton("BACK");
+        b2 = new JButton("뒤로"); // 한글 패치
         b2.setBounds(700,406,150,35);
         b2.setBackground(new Color(65,125,128));
         b2.setForeground(Color.WHITE);
