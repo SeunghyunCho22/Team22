@@ -21,7 +21,7 @@ public class BalanceEnquriy extends JFrame implements ActionListener {
         l3.setBounds(0,0,1550,830);
         add(l3);
 
-        JLabel label1 = new JLabel("Your Current Balance is Rs ");
+        JLabel label1 = new JLabel("귀하의 현재 잔액 : ");
         label1.setForeground(Color.WHITE);
         label1.setFont(new Font("System", Font.BOLD, 16));
         label1.setBounds(430,180,700,35);
@@ -33,10 +33,10 @@ public class BalanceEnquriy extends JFrame implements ActionListener {
         label2.setBounds(430,220,400,35);
         l3.add(label2);
 
-        b1 = new JButton("Back");
+        b1 = new JButton("이전으로");
         b1.setBounds(700,406,150,35);
         b1.setBackground(new Color(65,125,128));
-        b1.setForeground(Color.WHITE);
+        b1.setForeground(Color.black);
         b1.addActionListener(this);
         l3.add(b1);
 
