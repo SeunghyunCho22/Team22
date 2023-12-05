@@ -69,7 +69,7 @@ public class Withdrawl extends JFrame implements ActionListener {
                 String amount = textField.getText();
                 Date date = new Date();
                 if (textField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Please enter the Amount you want to withdraw");
+                    JOptionPane.showMessageDialog(null, "인출 금액을 입력하세요"); //한글 패치
                 } else {
                     Connn c = new Connn();
                     ResultSet resultSet = c.statement.executeQuery("select * from bank where pin = '" + pin + "'");
