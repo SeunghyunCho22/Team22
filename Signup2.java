@@ -1,4 +1,4 @@
-package system;
+package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,58 +23,58 @@ public class Signup2 extends JFrame implements ActionListener {
 
         this.formno = formno;
 
-        JLabel l1 = new JLabel("Page 2 :-");
+        JLabel l1 = new JLabel("2페이지");
         l1.setFont(new Font("Raleway", Font.BOLD,22));
         l1.setBounds(300,30,600,40);
         add(l1);
 
-        JLabel l2 = new JLabel("Additonal Details");
+        JLabel l2 = new JLabel("추가작성사항");
         l2.setFont(new Font("Raleway", Font.BOLD,22));
         l2.setBounds(300,60,600,40);
         add(l2);
 
-        JLabel l3 = new JLabel("Religion :");
+        JLabel l3 = new JLabel("종교 :");
         l3.setFont(new Font("Raleway", Font.BOLD,18));
         l3.setBounds(100,120,100,30);
         add(l3);
 
-        String religion[] = {"Hindu","Muslim","Sikh", "Christian", "Other"};
+        String religion[] = {"천주교","기독교","불교", "그 외"};
         comboBox = new JComboBox(religion);
         comboBox.setBackground(new Color(252,208,76));
         comboBox.setFont(new Font("Raleway",Font.BOLD,14));
         comboBox.setBounds(350,120,320,30);
         add(comboBox);
 
-        JLabel l4 = new JLabel("Category : ");
+        JLabel l4 = new JLabel("계층 : ");
         l4.setFont(new Font("Raleway", Font.BOLD,18));
         l4.setBounds(100,170,100,30);
         add(l4);
 
-        String Category [] = {"General","OBC","SC", "ST", "Other"};
+        String Category [] = {"청소년","청년","중년", "장년", "노년"};
         comboBox2 = new JComboBox(Category);
         comboBox2.setBackground(new Color(252,208,76));
         comboBox2.setFont(new Font("Raleway",Font.BOLD,14));
         comboBox2.setBounds(350,170,320,30);
         add(comboBox2);
 
-        JLabel l5 = new JLabel("Income : ");
+        JLabel l5 = new JLabel("수입/월 : ");
         l5.setFont(new Font("Raleway", Font.BOLD,18));
         l5.setBounds(100,220,100,30);
         add(l5);
 
-        String income [] = {"Null","<1,50,000","<2,50,000", "5,00,000", "Uptp 10,00,000","Above 10,00,000"};
+        String income [] = {"없음","<500,000","<1,000,000", "<3,000,000", "<10,000,000"," 10,000,000이상"};
         comboBox3 = new JComboBox(income);
         comboBox3.setBackground(new Color(252,208,76));
         comboBox3.setFont(new Font("Raleway",Font.BOLD,14));
         comboBox3.setBounds(350,220,320,30);
         add(comboBox3);
 
-        JLabel l6 = new JLabel("Educational : ");
+        JLabel l6 = new JLabel("학력 : ");
         l6.setFont(new Font("Raleway", Font.BOLD,18));
         l6.setBounds(100,270,150,30);
         add(l6);
 
-        String educational [] = {"Non-Graduate","Graduate","Post-Graduate", "Doctrate", "Others"};
+        String educational [] = {"중졸 이하","고졸","대졸", "석사이상"};
         comboBox4 = new JComboBox(educational);
         comboBox4.setBackground(new Color(252,208,76));
         comboBox4.setFont(new Font("Raleway",Font.BOLD,14));
@@ -82,19 +82,19 @@ public class Signup2 extends JFrame implements ActionListener {
         add(comboBox4);
 
 
-        JLabel l7 = new JLabel("Occupation : ");
+        JLabel l7 = new JLabel("직업 : ");
         l7.setFont(new Font("Raleway", Font.BOLD,18));
         l7.setBounds(100,340,150,30);
         add(l7);
 
-        String Occupation [] = {"Salaried","Self-Employed","Business", "Student", "Retired", "Other"};
+        String Occupation [] = {"직장인","고용주","사업자", "학생", "은퇴", "기타"};
         comboBox5 = new JComboBox(Occupation);
         comboBox5.setBackground(new Color(252,208,76));
         comboBox5.setFont(new Font("Raleway",Font.BOLD,14));
         comboBox5.setBounds(350,340,320,30);
         add(comboBox5);
 
-        JLabel l8 = new JLabel("PAN Number : ");
+        JLabel l8 = new JLabel("주민등록번호 : ");
         l8.setFont(new Font("Raleway", Font.BOLD,18));
         l8.setBounds(100,390,150,30);
         add(l8);
@@ -104,7 +104,7 @@ public class Signup2 extends JFrame implements ActionListener {
         textPan.setBounds(350,390,320,30);
         add(textPan);
 
-        JLabel l9 = new JLabel("Aadhar Number : ");
+        JLabel l9 = new JLabel("타 은행 계좌번호 : ");
         l9.setFont(new Font("Raleway", Font.BOLD,18));
         l9.setBounds(100,440,180,30);
         add(l9);
@@ -115,33 +115,33 @@ public class Signup2 extends JFrame implements ActionListener {
         add(textAadhar);
 
 
-        JLabel l10 = new JLabel("Senior Citizen : ");
+        JLabel l10 = new JLabel("장애여부 : ");
         l10.setFont(new Font("Raleway", Font.BOLD,18));
         l10.setBounds(100,490,180,30);
         add(l10);
 
-        r1 = new JRadioButton("Yes");
+        r1 = new JRadioButton("있음");
         r1.setFont(new Font("Raleway", Font.BOLD,14));
         r1.setBackground(new Color(252,208,76));
         r1.setBounds(350,490,100,30);
         add(r1);
-        r2 = new JRadioButton("No");
+        r2 = new JRadioButton("없음");
         r2.setFont(new Font("Raleway", Font.BOLD,14));
         r2.setBackground(new Color(252,208,76));
         r2.setBounds(460,490,100,30);
         add(r2);
 
-        JLabel l11 = new JLabel("Existing Account : ");
+        JLabel l11 = new JLabel("사용중인 계좌 : ");
         l11.setFont(new Font("Raleway", Font.BOLD,18));
         l11.setBounds(100,540,180,30);
         add(l11);
 
-        e1 = new JRadioButton("Yes");
+        e1 = new JRadioButton("있음");
         e1.setFont(new Font("Raleway", Font.BOLD,14));
         e1.setBackground(new Color(252,208,76));
         e1.setBounds(350,540,100,30);
         add(e1);
-        e2 = new JRadioButton("No");
+        e2 = new JRadioButton("없음");
         e2.setFont(new Font("Raleway", Font.BOLD,14));
         e2.setBackground(new Color(252,208,76));
         e2.setBounds(460,540,100,30);
@@ -157,7 +157,7 @@ public class Signup2 extends JFrame implements ActionListener {
         l13.setBounds(760,10,60,30);
         add(l13);
 
-        next = new JButton("Next");
+        next = new JButton("다음");
         next.setFont(new Font("Raleway",Font.BOLD,14));
         next.setBackground(Color.WHITE);
         next.setForeground(Color.BLACK);
