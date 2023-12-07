@@ -1,6 +1,6 @@
-package system;
+package bank.management.system;
 
-//import com.toediter.calendar.JDateChooser;
+import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,12 +13,12 @@ public class Signup extends JFrame implements ActionListener {
     JButton next;
 
     JTextField textName ,textFname, textEmail,textAdd,textcity,textState,textPin;
-//    JDateChooser dateChooser;
+    JDateChooser dateChooser;
     Random ran = new Random();
     long first4 =(ran.nextLong() % 9000L) +1000L;
     String first = " " + Math.abs(first4);
     Signup(){
-        super ("APPLICATION FORM");
+        super ("회원가입");
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
         Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
@@ -27,22 +27,22 @@ public class Signup extends JFrame implements ActionListener {
         image.setBounds(25,10,100,100);
         add(image);
 
-        JLabel label1 = new JLabel("APPLICATION FORM NO."+ first);
+        JLabel label1 = new JLabel("회원가입 No."+first);
         label1.setBounds(160,20,600,40);
         label1.setFont(new Font("Raleway",Font.BOLD,38));
         add(label1);
 
-        JLabel label2 = new JLabel("Page 1");
+        JLabel label2 = new JLabel("1페이지");
         label2.setFont(new Font("Ralway",Font.BOLD, 22));
         label2.setBounds(330,70,600,30);
         add(label2);
 
-        JLabel label3 = new JLabel("Personal Details");
+        JLabel label3 = new JLabel("개인 상세정보");
         label3.setFont(new Font("Raleway", Font.BOLD,22));
-        label3.setBounds(290,90,600,30);
+        label3.setBounds(290,100,600,30);
         add(label3);
 
-        JLabel labelName = new JLabel("Name :");
+        JLabel labelName = new JLabel("이름 :");
         labelName.setFont(new Font("Raleway", Font.BOLD, 20));
         labelName.setBounds(100,190,100,30);
         add(labelName);
@@ -52,7 +52,7 @@ public class Signup extends JFrame implements ActionListener {
         textName.setBounds(300,190,400,30);
         add(textName);
 
-        JLabel labelfName = new JLabel("Father's Name :");
+        JLabel labelfName = new JLabel("성 :");
         labelfName.setFont(new Font("Raleway", Font.BOLD, 20));
         labelfName.setBounds(100,240,200,30);
         add(labelfName);
@@ -62,28 +62,28 @@ public class Signup extends JFrame implements ActionListener {
         textFname.setBounds(300,240,400,30);
         add(textFname);
 
-        JLabel DOB = new JLabel("Date of Birth");
+        JLabel DOB = new JLabel("생년월일 :");
         DOB.setFont(new Font("Raleway", Font.BOLD, 20));
         DOB.setBounds(100,340,200,30);
         add(DOB);
 
-//        dateChooser = new JDateChooser();
-//        dateChooser.setForeground(new Color(105,105,105));
-//        dateChooser.setBounds(300,340,400,30);
-//        add(dateChooser);
+        dateChooser = new JDateChooser();
+        dateChooser.setForeground(new Color(105,105,105));
+        dateChooser.setBounds(300,340,400,30);
+        add(dateChooser);
 
-        JLabel labelG = new JLabel("Gender");
+        JLabel labelG = new JLabel("성별 :");
         labelG.setFont(new Font("Raleway", Font.BOLD, 20));
         labelG.setBounds(100,290,200,30);
         add(labelG);
 
-        r1 = new JRadioButton("Male");
+        r1 = new JRadioButton("남자");
         r1.setFont(new Font("Raleway", Font.BOLD,14));
         r1.setBackground(new Color(222,255,228));
         r1.setBounds(300,290,60,30);
         add(r1);
 
-        r2 = new JRadioButton("Female");
+        r2 = new JRadioButton("여자");
         r2.setBackground(new Color(222,255,228));
         r2.setFont(new Font("Raleway", Font.BOLD,14));
         r2.setBounds(450,290,90,30);
@@ -93,7 +93,7 @@ public class Signup extends JFrame implements ActionListener {
         buttonGroup.add(r1);
         buttonGroup.add(r2);
 
-        JLabel labelEmail = new JLabel("Email address :");
+        JLabel labelEmail = new JLabel("이메일 주소 :");
         labelEmail.setFont(new Font("Raleway", Font.BOLD, 20));
         labelEmail.setBounds(100,390,200,30);
         add(labelEmail);
@@ -104,24 +104,24 @@ public class Signup extends JFrame implements ActionListener {
         add(textEmail);
 
 
-        JLabel labelMs = new JLabel("Marital Status :");
+        JLabel labelMs = new JLabel("결혼 여부 :");
         labelMs.setFont(new Font("Raleway", Font.BOLD, 20));
         labelMs.setBounds(100,440,200,30);
         add(labelMs);
 
-        m1 = new JRadioButton("Married");
+        m1 = new JRadioButton("기혼");
         m1.setBounds(300,440,100,30);
         m1.setBackground(new Color(222,255,228));
         m1.setFont(new Font("Raleway", Font.BOLD,14));
         add(m1);
 
-        m2 = new JRadioButton("Unmarried");
+        m2 = new JRadioButton("미혼");
         m2.setBackground(new Color(222,255,228));
         m2.setBounds(450,440,100,30);
         m2.setFont(new Font("Raleway", Font.BOLD,14));
         add(m2);
 
-        m3 = new JRadioButton("Other");
+        m3 = new JRadioButton("기타");
         m3.setBackground(new Color(222,255,228));
         m3.setBounds(635,440,100,30);
         m3.setFont(new Font("Raleway", Font.BOLD,14));
@@ -132,7 +132,7 @@ public class Signup extends JFrame implements ActionListener {
         buttonGroup1.add(m2);
         buttonGroup1.add(m3);
 
-        JLabel labelAdd = new JLabel("Address :");
+        JLabel labelAdd = new JLabel("주소 :");
         labelAdd.setFont(new Font("Raleway", Font.BOLD, 20));
         labelAdd.setBounds(100,490,200,30);
         add(labelAdd);
@@ -142,7 +142,7 @@ public class Signup extends JFrame implements ActionListener {
         textAdd.setBounds(300,490,400,30);
         add(textAdd);
 
-        JLabel labelCity = new JLabel("City :");
+        JLabel labelCity = new JLabel("상세 주소 :");
         labelCity.setFont(new Font("Raleway", Font.BOLD, 20));
         labelCity.setBounds(100,540,200,30);
         add(labelCity);
@@ -152,7 +152,7 @@ public class Signup extends JFrame implements ActionListener {
         textcity.setBounds(300,540,400,30);
         add(textcity);
 
-        JLabel labelPin = new JLabel("Pin Code :");
+        JLabel labelPin = new JLabel("개인식별번호(PIN) :");
         labelPin.setFont(new Font("Raleway", Font.BOLD, 20));
         labelPin.setBounds(100,590,200,30);
         add(labelPin);
@@ -162,7 +162,7 @@ public class Signup extends JFrame implements ActionListener {
         textPin.setBounds(300,590,400,30);
         add(textPin);
 
-        JLabel labelstate = new JLabel("State :");
+        JLabel labelstate = new JLabel("우편번호 :");
         labelstate.setFont(new Font("Raleway", Font.BOLD, 20));
         labelstate.setBounds(100,640,200,30);
         add( labelstate);
@@ -172,7 +172,7 @@ public class Signup extends JFrame implements ActionListener {
         textState.setBounds(300,640,400,30);
         add(textState);
 
-        next = new JButton("Next");
+        next = new JButton("다음");
         next.setFont(new Font("Raleway",Font.BOLD, 14));
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
@@ -194,7 +194,7 @@ public class Signup extends JFrame implements ActionListener {
         String formno = first;
         String name = textName.getText();
         String fname = textFname.getText();
-//        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
         String gender = null;
         if(r1.isSelected()){
             gender = "Male";
@@ -218,11 +218,11 @@ public class Signup extends JFrame implements ActionListener {
 
         try{
             if (textName.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Fill all the fields");
+                JOptionPane.showMessageDialog(null, "빈칸을 채워주세요.");
             }else {
                 Connn c = new Connn();
-//                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
-//                c.statement.executeUpdate(q);
+                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
+                c.statement.executeUpdate(q);
                 new Signup2(formno);
                 setVisible(false);
             }
