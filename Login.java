@@ -1,4 +1,4 @@
-package system;
+package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,13 +28,13 @@ public class Login extends JFrame implements ActionListener {
         iimage.setBounds(630,350,100,100);
         add(iimage);
 
-        label1 = new JLabel("WELCOME TO ATM");
+        label1 = new JLabel("환영합니다");
         label1.setForeground(Color.WHITE);
         label1.setFont(new Font("AvantGarde", Font.BOLD, 38));
-        label1.setBounds(230,125,450,40);
+        label1.setBounds(305,125,450,40);
         add(label1);
 
-        label2 = new JLabel("Card No:");
+        label2 = new JLabel("카드번호 :");
         label2.setFont(new Font("Ralway", Font.BOLD, 28));
         label2.setForeground(Color.WHITE);
         label2.setBounds(150,190,375,30);
@@ -45,7 +45,7 @@ public class Login extends JFrame implements ActionListener {
         textField2.setFont(new Font("Arial", Font.BOLD,14));
         add(textField2);
 
-        label3 = new JLabel("PIN: ");
+        label3 = new JLabel("PIN :");
         label3.setFont(new Font("Ralway", Font.BOLD, 28));
         label3.setForeground(Color.WHITE);
         label3.setBounds(150,250,375,30);
@@ -56,24 +56,24 @@ public class Login extends JFrame implements ActionListener {
         passwordField3.setFont(new Font("Arial", Font.BOLD, 14));
         add(passwordField3);
 
-        button1 = new JButton("SIGN IN");
-        button1.setFont(new Font("Arial", Font.BOLD, 14));
+        button1 = new JButton("로그인");
+        button1.setFont(new Font("Raleway", Font.BOLD, 14));
         button1.setForeground(Color.WHITE);
         button1.setBackground(Color.BLACK);
         button1.setBounds(300,300,100, 30);
         button1.addActionListener(this);
         add(button1);
 
-        button2 = new JButton("CLEAR");
-        button2.setFont(new Font("Arial", Font.BOLD, 14));
+        button2 = new JButton("초기화");
+        button2.setFont(new Font("Raleway", Font.BOLD, 14));
         button2.setForeground(Color.WHITE);
         button2.setBackground(Color.BLACK);
         button2.setBounds(430,300,100, 30);
         button2.addActionListener(this);
         add(button2);
 
-        button3 = new JButton("SIGN UP");
-        button3.setFont(new Font("Arial", Font.BOLD, 14));
+        button3 = new JButton("회원가입");
+        button3.setFont(new Font("Raleway", Font.BOLD, 14));
         button3.setForeground(Color.WHITE);
         button3.setBackground(Color.BLACK);
         button3.setBounds(300,350,230, 30);

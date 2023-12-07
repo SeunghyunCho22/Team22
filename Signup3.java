@@ -1,9 +1,11 @@
-package system;
+package bank.management.system;
 
+import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.server.ExportException;
 import java.util.Random;
 
 public class Signup3 extends JFrame implements ActionListener {
@@ -13,6 +15,7 @@ public class Signup3 extends JFrame implements ActionListener {
     JButton s,c;
     String formno;
     Signup3(String formno){
+        super("회원가입");
 
         this.formno = formno;
 
@@ -23,40 +26,40 @@ public class Signup3 extends JFrame implements ActionListener {
         image.setBounds(150,5,100,100);
         add(image);
 
-        JLabel l1 = new JLabel("Page 3:");
+        JLabel l1 = new JLabel("3페이지");
         l1.setFont(new Font("Raleway",Font.BOLD,22));
         l1.setBounds(280,40,400,40);
         add(l1);
 
-        JLabel l2 = new JLabel("Account Details");
+        JLabel l2 = new JLabel("계좌 정보");
         l2.setFont(new Font("Raleway",Font.BOLD,22));
         l2.setBounds(280,70,400,40);
         add(l2);
 
-        JLabel l3 = new JLabel("Account Type:");
+        JLabel l3 = new JLabel("개설 목적");
         l3.setFont(new Font("Raleway",Font.BOLD,18));
         l3.setBounds(100,140,200,30);
         add(l3);
 
-        r1 = new JRadioButton("Saving Account");
+        r1 = new JRadioButton("저축");
         r1.setFont(new Font("Raleway",Font.BOLD,16));
         r1.setBackground(new Color(215,252,252));
         r1.setBounds(100,180,150,30);
         add(r1);
 
-        r2 = new JRadioButton("Fixed Deposit Account");
+        r2 = new JRadioButton("정기예금");
         r2.setFont(new Font("Raleway",Font.BOLD,16));
         r2.setBackground(new Color(215,252,252));
         r2.setBounds(350,180,300,30);
         add(r2);
 
-        r3 = new JRadioButton("Current Account");
+        r3 = new JRadioButton("입출금통장");
         r3.setFont(new Font("Raleway",Font.BOLD,16));
         r3.setBackground(new Color(215,252,252));
         r3.setBounds(100,220,250,30);
         add(r3);
 
-        r4 = new JRadioButton("Recurring Deposit Account");
+        r4 = new JRadioButton("적금");
         r4.setFont(new Font("Raleway",Font.BOLD,16));
         r4.setBackground(new Color(215,252,252));
         r4.setBounds(350,220,250,30);
@@ -68,12 +71,12 @@ public class Signup3 extends JFrame implements ActionListener {
         buttonGroup.add(r3);
         buttonGroup.add(r4);
 
-        JLabel l4 = new JLabel("Card Number:");
+        JLabel l4 = new JLabel("카드번호 :");
         l4.setFont(new Font("Raleway",Font.BOLD,18));
         l4.setBounds(100,300,200,30);
         add(l4);
 
-        JLabel l5 = new JLabel("(Your 16-digit Card Number)");
+        JLabel l5 = new JLabel("(16자리)");
         l5.setFont(new Font("Raleway",Font.BOLD,12));
         l5.setBounds(100,330,200,20);
         add(l5);
@@ -83,7 +86,7 @@ public class Signup3 extends JFrame implements ActionListener {
         l6.setBounds(330,300,250,30);
         add(l6);
 
-        JLabel l7 = new JLabel("(It would appear on atm card/cheque Book and Statements)");
+        JLabel l7 = new JLabel("");
         l7.setFont(new Font("Raleway",Font.BOLD,12));
         l7.setBounds(330,330,500,20);
         add(l7);
@@ -98,53 +101,53 @@ public class Signup3 extends JFrame implements ActionListener {
         l9.setBounds(330,370,200,30);
         add(l9);
 
-        JLabel l10 = new JLabel("(4-digit Password)");
+        JLabel l10 = new JLabel("(4자리 비밀번호)");
         l10.setFont(new Font("Raleway",Font.BOLD,12));
         l10.setBounds(100,400,200,20);
         add(l10);
 
-        JLabel l11 = new JLabel("Services Required:");
+        JLabel l11 = new JLabel("필요한 서비스");
         l11.setFont(new Font("Raleway",Font.BOLD,18));
         l11.setBounds(100,450,200,30);
         add(l11);
 
-        c1 = new JCheckBox("ATM CARD");
+        c1 = new JCheckBox("ATM 카드");
         c1.setBackground(new Color(215,252,252));
         c1.setFont(new Font("Raleway",Font.BOLD,16));
         c1.setBounds(100,500,200,30);
         add(c1);
 
-        c2 = new JCheckBox("Internet Banking");
+        c2 = new JCheckBox("인터넷 뱅킹");
         c2.setBackground(new Color(215,252,252));
         c2.setFont(new Font("Raleway",Font.BOLD,16));
         c2.setBounds(350,500,200,30);
         add(c2);
 
-        c3 = new JCheckBox("Mobile Banking");
+        c3 = new JCheckBox("모바일 뱅킹");
         c3.setBackground(new Color(215,252,252));
         c3.setFont(new Font("Raleway",Font.BOLD,16));
         c3.setBounds(100,550,200,30);
         add(c3);
 
-        c4 = new JCheckBox("EMAIL Alerts");
+        c4 = new JCheckBox("이메일 알림");
         c4.setBackground(new Color(215,252,252));
         c4.setFont(new Font("Raleway",Font.BOLD,16));
         c4.setBounds(350,550,200,30);
         add(c4);
 
-        c5 = new JCheckBox("Cheque Book");
+        c5 = new JCheckBox("SMS 알림");
         c5.setBackground(new Color(215,252,252));
         c5.setFont(new Font("Raleway",Font.BOLD,16));
         c5.setBounds(100,600,200,30);
         add(c5);
 
-        c6 = new JCheckBox("E-Statement");
+        c6 = new JCheckBox("전자명세서");
         c6.setBackground(new Color(215,252,252));
         c6.setFont(new Font("Raleway",Font.BOLD,16));
         c6.setBounds(350,600,200,30);
         add(c6);
 
-        JCheckBox c7 = new JCheckBox("I here by decleares that the above entered details correct to the best of my knlowledge.",true);
+        JCheckBox c7 = new JCheckBox("이용약관, 개인정보 수집 및 이용, 개인정보 제3자 제공에 모두 동의합니다.",true);
         c7.setBackground(new Color(215,252,252));
         c7.setFont(new Font("Raleway",Font.BOLD,12));
         c7.setBounds(100,680,600,20);
@@ -161,7 +164,7 @@ public class Signup3 extends JFrame implements ActionListener {
         add(l13);
 
 
-        s = new JButton("Submit");
+        s = new JButton("완료");
         s.setFont(new Font("Raleway", Font.BOLD,14));
         s.setBackground(Color.BLACK);
         s.setForeground(Color.WHITE);
@@ -169,7 +172,7 @@ public class Signup3 extends JFrame implements ActionListener {
         s.addActionListener(this);
         add(s);
 
-        c = new JButton("Cancel");
+        c = new JButton("취소");
         c.setFont(new Font("Raleway", Font.BOLD,14));
         c.setBackground(Color.BLACK);
         c.setForeground(Color.WHITE);

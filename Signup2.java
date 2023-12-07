@@ -12,7 +12,7 @@ public class Signup2 extends JFrame implements ActionListener {
     JButton next;
     String formno;
     Signup2(String formno){
-        super("APPLICATION FORM");
+        super("회원가입");
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
         Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
@@ -199,7 +199,7 @@ public class Signup2 extends JFrame implements ActionListener {
 
         try{
             if (textPan.getText().equals("") || textAadhar.getText().equals("")){
-                JOptionPane.showMessageDialog(null,"Fill all the fields");
+                JOptionPane.showMessageDialog(null,"빈칸을 채워주세요.");
             }else {
                 Connn c = new Connn();
                 String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"')";
